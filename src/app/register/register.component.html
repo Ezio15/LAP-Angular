@@ -1,0 +1,41 @@
+
+<div class="row">
+
+        <div class="col-md-3 col-md-offset-3" style="margin-left: 400px;margin-top:75px">
+            <div class="jumbotron">
+                <p>Sign up!</p>
+      <h2 style="margin: auto"> </h2>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <label for="username">Name:</label>
+          <input type="text" style="width: 200px" class="form-control"  formControlName="name" id="name" autocomplete="off">
+          <div class="error" *ngIf="registerForm.controls['name'].hasError('required') && registerForm.controls['name'].touched">Name is required</div>
+          
+        
+        </div>
+        <div class="form-group">
+          <label for="username">Email:</label>
+          <input type="text" style="width: 200px" class="form-control"  formControlName="email" id="username" autocomplete="off">
+          <div class="error" *ngIf="registerForm.controls['email'].hasError('required') && registerForm.controls['email'].touched">Email is required</div>
+          <div class="error" *ngIf="registerForm.controls['email'].hasError('email') ">Please enter proper email</div>
+        
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" style="width: 200px" formControlName="password" id="pwd" autocomplete="off">
+          <div class="error" *ngIf="registerForm.controls['password'].hasError('required') && registerForm.controls['password'].touched">Password is required</div>
+        </div>
+        <div class="form-group">
+            <label for="pwd">Confirm Password:</label>
+            <input type="password" class="form-control" style="width: 200px" formControlName="cnfmPassword" id="cnfpwd" autocomplete="off">
+            <div class="error" *ngIf="registerForm.controls['cnfmPassword'].hasError('required') && registerForm.controls['cnfmPassword'].touched">Confirm Password is required</div>
+          </div>
+        <button class="btn btn-success" [disabled]="registerForm.invalid">Register</button>
+        <div *ngIf="invalidLogin" class="error">
+          <div>Please enter all details!</div>
+        </div>
+      </form></div>
+    </div>
+  </div>
+  

@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              
             ],
             "scripts": []
           },
@@ -124,5 +125,8 @@
       }
     }
   },
-  "defaultProject": "CrudApp"
+  "defaultProject": "CrudApp",
+  "cli": {
+    "analytics": "4859f3d8-ead9-4e2e-8ca3-fb1c3faa73fd"
+  }
 }
