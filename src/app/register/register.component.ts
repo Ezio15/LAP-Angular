@@ -13,6 +13,8 @@ export class RegisterComponent implements OnInit {
  
   registerForm!: FormGroup;
   invalidLogin: boolean = false;
+  Roles: any = ['Applicant', 'Administrator', 'Senior officer','Loan offficer'];
+
   constructor(private formBuilder: FormBuilder, private router: Router, private apiService:ApiServiceService) { 
     console.log("Register...");
   }
@@ -26,7 +28,8 @@ export class RegisterComponent implements OnInit {
       email: this.registerForm.controls.email.value,
       password: this.registerForm.controls.password.value,
       cnfmPassword: this.registerForm.controls.cnfmPassword.value,
-      name: this.registerForm.controls.name.value
+      name: this.registerForm.controls.name.value,
+      role: this.registerForm.controls.roles.value
     }
     console.log(registerPayload);
     this.apiService.register(registerPayload).subscribe(data => {
@@ -48,7 +51,8 @@ export class RegisterComponent implements OnInit {
       email: ['', Validators.compose([Validators.required,Validators.email])],
       password: ['', Validators.required],
       cnfmPassword: ['', Validators.required],
-      name: ['', Validators.required]
+      name: ['', Validators.required],
+      roles: ['', Validators.required]
     });
   }
 

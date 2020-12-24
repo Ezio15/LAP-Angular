@@ -22,4 +22,15 @@ export class ApiServiceService {
     return this.http.post<ResponseModel>('http://localhost:8080/' + 'register', registerPayload);
   }
 
+  uploadCity(formData: any) : Observable<ResponseModel> {
+    console.log(formData);
+    return this.http.post<any>('http://localhost:8080/' + 'admin/uploadCity', formData);
+  }
+
+  uploadDoc(formData: any) : Observable<ResponseModel> {
+    console.log("inside uploading doc..")
+    console.log(formData);
+    return this.http.post<any>('http://localhost:8080/' + 'admin/uploadDocument', formData);
+  }
+
 }

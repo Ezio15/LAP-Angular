@@ -17,7 +17,8 @@
         </div>
         <button class="btn btn-success" [disabled]="loginForm.invalid">Login</button>
 
-        <a routerLink="/register"><button class="btn btn-success" style="margin-left: 10px;" >Register</button> </a>
+        <a routerLink="/register">
+          <button type="submit" class="btn btn-success" style="margin-left: 10px;" >Register</button> </a>
         
         <div *ngIf="invalidLogin" class="error">
           <div>Invalid credentials.</div>
