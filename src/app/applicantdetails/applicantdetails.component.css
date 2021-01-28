@@ -1,0 +1,38 @@
+.jumbotron{
+  width: 100vh;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.container {
+
+  position: relative;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: rgb(99, 8, 8) important;
+ }
+ 
+ ::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: rgb(206, 8, 8) !important;
+ } 
+ 
+ ::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: rgb(214, 18, 18) !important;;
+ }
+ 
+ ::ng-deep .mat-form-field-label {
+  /*change color of label*/
+  color: rgb(216, 22, 22) !important;
+ }
+ 
+ 
+ mat-datepicker-toggle {
+  color: rgb(12, 12, 12) !important;
+ }
+

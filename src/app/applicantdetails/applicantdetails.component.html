@@ -1,0 +1,125 @@
+<div class="row">
+
+  <div class="col-md-3 col-md-offset-3" style="margin-left: 400px;margin-top:75px">
+    <div class="jumbotron">
+      <div class="container" style="margin-left: 150px;">
+        <div class="child">
+
+        <p>Kindly enter below details!</p>
+        <h2 style="margin: auto"> </h2>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+
+          <div class="form-group">
+            <label for="website">Loan Purpose:</label>
+            <select formControlName="loan" style="width: 200px" class="form-control">
+              <option>Select purpose</option>
+              <option *ngFor="let purpose of LoanPurpose">{{purpose}}</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label for="username">Loan amount:</label>
+            <input type="text" style="width: 200px" class="form-control" formControlName="loanAmount" id="loanAmount"
+              autocomplete="off">
+            <div class="error"
+              *ngIf="registerForm.controls['loanAmount'].hasError('required') && registerForm.controls['loanAmount'].touched">
+              Name is required</div>
+          </div>
+
+          <div class="form-group">
+            <label for="username">Property finalized:</label>
+
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="materialUnchecked2" [value]="true"
+                formControlName="property" name="property">
+              <label class="form-check-label" for="materialUnchecked2">Yes</label>
+            </div>
+
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="materialChecked2" [value]="false"
+                formControlName="property" name="property">
+              <label class="form-check-label" for="materialChecked2">No</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="username">Monthly income:</label>
+            <input type="text" style="width: 200px" class="form-control" formControlName="monthlyIncome"
+              id="monthlyIncome" autocomplete="off">
+            <div class="error"
+              *ngIf="registerForm.controls['monthlyIncome'].hasError('required') && registerForm.controls['monthlyIncome'].touched">
+              Monthly Income is required</div>
+          </div>
+
+          <div class="form-group">
+            <label for="username">Name:</label>
+            <input type="text" style="width: 200px" class="form-control" formControlName="name" id="name"
+              autocomplete="off">
+            <div class="error"
+              *ngIf="registerForm.controls['name'].hasError('required') && registerForm.controls['name'].touched">Name
+              is
+              required</div>
+          </div>
+          <div class="form-group">
+            <label for="username">Email:</label>
+            <input type="text" style="width: 200px" class="form-control" formControlName="email" id="email"
+              autocomplete="off">
+            <div class="error"
+              *ngIf="registerForm.controls['email'].hasError('required') && registerForm.controls['email'].touched">
+              Email
+              is required</div>
+            <div class="error" *ngIf="registerForm.controls['email'].hasError('email') ">Please enter proper email</div>
+
+          </div>
+
+          <div class="form-group">
+            <label for="username">Mobile no:</label>
+            <input type="text" style="width: 200px" class="form-control" formControlName="mobileNo" id="mobileNo"
+              autocomplete="off">
+            <div class="error"
+              *ngIf="registerForm.controls['mobileNo'].hasError('required') && registerForm.controls['mobileNo'].touched">
+              Mobile No is required</div>
+          </div>
+
+          <div class="form-group">
+            <label for="username">DOB no:</label>
+            <input type="text" style="width: 200px" class="form-control" formControlName="mobileNo" id="mobileNo"
+              autocomplete="off">
+            <div class="error"
+              *ngIf="registerForm.controls['mobileNo'].hasError('required') && registerForm.controls['mobileNo'].touched">
+              Mobile No is required</div>
+          </div>
+
+          <mat-form-field appearance="fill" class="example-form-field">
+            <mat-label>Choose a date</mat-label>
+            <input [value]="date.value" matInput [matDatepicker]="datepicker">
+            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker>
+              <mat-datepicker-actions>
+                <button mat-button matDatepickerCancel>Cancel</button>
+                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+              </mat-datepicker-actions>
+            </mat-datepicker>
+          </mat-form-field>
+          
+
+
+          <div>
+
+            <button class="btn btn-success" [disabled]="registerForm.invalid">Apply</button>
+            <button type="Cancel" style="margin-top: 10px;" class="btn btn-secondary btn-lg disabled">Register</button>
+          </div>
+          <div *ngIf="invalidLogin" class="error">
+            <div>Please enter all details!</div>
+          </div>
+
+        </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
